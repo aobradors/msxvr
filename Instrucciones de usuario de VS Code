@@ -1,21 +1,21 @@
-Como configurar un fichero MD de instrucciones MSXVR/VR-SCRIPT para indicar en el Chat de VS Code que lo utilize cuando haces preguntas en el prompt del Chat de Copilot en los ficheros VS-SCRIPT (.pi):
+# Como configurar un fichero MD de instrucciones MSXVR/VR-SCRIPT para indicar en el Chat de VS Code que lo utilize cuando haces preguntas en el prompt del Chat de Copilot en los ficheros VS-SCRIPT (.pi):
 --------------------------------
 Para lograr exactamente eso en VS Code y que funcione en cualquier proyecto o repositorio cada vez que edites archivos .pi, debes usar el sistema de instrucciones de usuario (.instructions.md) de VS Code.
 
 VS Code no leerá un archivo llamado GEMINI.md en ~/.gemini/, pero su sistema nativo te permite definir el contexto global filtrado por extensión usando la directiva applyTo: "**/*.pi".
 
-Pasos para configurarlo:
+# Pasos para configurarlo:
 
-1. Crear la carpeta de prompts de usuario
+## 1. Crear la carpeta de prompts de usuario
 En Windows, crea la carpeta prompts dentro del perfil de usuario de VS Code (si aún no existe):
 C:\Users\agusti\AppData\Roaming\Code\User\prompts\
 (También accesible escribiendo %APPDATA%\Code\User\prompts en el explorador de archivos).
 
-2. Crear el archivo de instrucciones
+## 2. Crear el archivo de instrucciones
 Dentro de esa carpeta prompts, crea un archivo con la extensión .instructions.md, por ejemplo:
 C:\Users\agusti\AppData\Roaming\Code\User\prompts\vrscript.instructions.md
 
-3. Añadir la cabecera (frontmatter) y el contenido de tu GEMINI.md
+## 3. Añadir la cabecera (frontmatter) y el contenido de tu GEMINI.md
 Abre el archivo vrscript.instructions.md y añade al inicio la configuración YAML:
 ---
 name: "VR-Script MSXVR"
@@ -27,7 +27,7 @@ applyTo: "**/*.pi"
 ...
 
 
-¿Cómo funciona?
+# ¿Cómo funciona?
 Global a nivel de usuario: Al estar en %APPDATA%\Code\User\prompts\, aplica a todas las instancias y proyectos que abras en tu equipo.
 Filtro automático (applyTo: "**/*.pi"): El asistente (Gemini 3.8 o el modelo que estés usando en Copilot) incluirá automáticamente estas instrucciones en su contexto cada vez que estés interactuando con archivos .pi.
 Sincronización: Si usas Settings Sync en VS Code, este archivo se sincronizará con tu cuenta entre diferentes equipos.
