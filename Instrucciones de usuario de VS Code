@@ -23,7 +23,7 @@ description: "Contexto, sintaxis y reglas de VR-Script para MSXVR en archivos .p
 applyTo: "**/*.pi"
 ---
 
-# Aquí pega todo el contenido de las instrucciones para el modelo agent #
+# Aquí pega todo el contenido del fichero "vrscript.instructions.md" con las instrucciones para el modelo del chat #
 ...
 
 
